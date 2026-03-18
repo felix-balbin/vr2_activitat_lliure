@@ -22,10 +22,12 @@ public class ZombieStateManager : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    void ChangeState(ZombieBaseState state)
+    void ChangeState(ZombieBaseState newState)
     {
-        currentState = state;
-        state.EnterState(this);
+        if (newState == currentState) return;
+        newState.ExitState(this);
+        currentState = newState;
+        newState.EnterState(this);
 
     }
 }

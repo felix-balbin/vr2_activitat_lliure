@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ZombieWalkState : ZombieBaseState
+public class ZombieHitState : ZombieBaseState
 {
     public override void EnterState(ZombieStateManager zombie)
     {
@@ -8,8 +8,10 @@ public class ZombieWalkState : ZombieBaseState
     public override void UpdateState(ZombieStateManager zombie)
     {
     }
+    public override void ExitState(ZombieStateManager zombie)
+    {
+    }
     public override void OnCollisionEnter(ZombieStateManager zombie)
     {
     }
-
 }

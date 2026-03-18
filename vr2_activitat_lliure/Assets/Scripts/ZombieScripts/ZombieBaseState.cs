@@ -5,6 +5,7 @@ public abstract class ZombieBaseState
     public abstract void EnterState(ZombieStateManager zombie);
     public abstract void UpdateState(ZombieStateManager zombie);
     public abstract void OnCollisionEnter(ZombieStateManager zombie);
+    public abstract void ExitState(ZombieStateManager zombie);
 
 
 }
