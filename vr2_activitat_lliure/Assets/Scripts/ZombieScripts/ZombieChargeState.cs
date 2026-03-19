@@ -1,16 +1,36 @@
 using UnityEngine;
 
-public class ZombieChargeState : MonoBehaviour
+public class ZombieChargeState : ZombieBaseState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public ZombieBaseState attackState;
+    public float ChargeDuration = 0.7f;
+    private float timer;
+    public override void EnterState(ZombieStateManager zombie)
     {
-        
+        timer = 0;
+        var ctx = zombie.GetComponent<ZombieAIContext>();
+        ctx.Agent.isStopped = true;
+        ctx.Animator.SetBool("Charge", true);
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState(ZombieStateManager zombie)
     {
-        
+        timer += Time.deltaTime;
+
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
+
+        //mover el boss al target
+        //ctx.transform.position += dir * ChargeSpeed * Time.deltaTime;
+        //Si pasa el tiempo de carga, ataca
+        if (timer >= ChargeDuration)
+        {
+            zombie.ChangeState(attackState);
+        }
+
+    }
+    public override void ExitState(ZombieStateManager zombie)
+    {
+    }
+    public override void OnCollisionEnter(ZombieStateManager zombie)
+    {
     }
 }

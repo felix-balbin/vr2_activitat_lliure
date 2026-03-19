@@ -2,16 +2,21 @@ using UnityEngine;
 
 public class ZombieStateManager : MonoBehaviour
 {
-    ZombieBaseState currentState;
+    public ZombieBaseState initialState;
+    public ZombieBaseState currentState;
 
-    public ZombieAliveState aliveState = new ZombieAliveState();
-    public ZombieWalkState walkState = new ZombieWalkState();
-    public ZombieHitState hitState = new ZombieHitState();
-    public ZombieAttackState attackState = new ZombieAttackState();
+    //public ZombieAliveState aliveState = new ZombieAliveState();
+    //public ZombieWalkState walkState = new ZombieWalkState();
+    //public ZombieHitState hitState = new ZombieHitState();
+    //public ZombieChargeState chargeState = new ZombieChargeState();
+    //public ZombieAttackState attackState = new ZombieAttackState();
+    //public ZombieDeathState deathState = new ZombieDeathState();
+    //public ZombieDanceState danceState = new ZombieDanceState();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentState = aliveState;
+        currentState = initialState;
         currentState.EnterState(this);
         
     }
@@ -22,7 +27,7 @@ public class ZombieStateManager : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    void ChangeState(ZombieBaseState newState)
+    public void ChangeState(ZombieBaseState newState)
     {
         if (newState == currentState) return;
         newState.ExitState(this);
