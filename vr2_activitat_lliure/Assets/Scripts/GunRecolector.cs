@@ -15,6 +15,7 @@ public class GunRecolector : MonoBehaviour
     public void Recoger()
     {
         armaObjeto.SetActive(false);
+        GameManager.instancia.SumarArma();
         StartCoroutine(MostrarMensaje());
     }
 
