@@ -27,7 +27,5 @@ public class ZombieAttackState : ZombieBaseState
     public override void ExitState(ZombieStateManager zombie)
     {
     }
-    public override void OnCollisionEnter(ZombieStateManager zombie)
-    {
-    }
+
 }

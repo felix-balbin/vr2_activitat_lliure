@@ -2,21 +2,29 @@ using UnityEngine;
 
 public class ZombieStateManager : MonoBehaviour
 {
-    public ZombieBaseState initialState;
+    public ZombieBaseState lastState;
     public ZombieBaseState currentState;
 
-    //public ZombieAliveState aliveState = new ZombieAliveState();
-    //public ZombieWalkState walkState = new ZombieWalkState();
-    //public ZombieHitState hitState = new ZombieHitState();
-    //public ZombieChargeState chargeState = new ZombieChargeState();
-    //public ZombieAttackState attackState = new ZombieAttackState();
-    //public ZombieDeathState deathState = new ZombieDeathState();
-    //public ZombieDanceState danceState = new ZombieDanceState();
+    public ZombieAliveState aliveState = new ZombieAliveState();
+    public ZombieWalkState walkState = new ZombieWalkState();
+    public ZombieHitState hitState = new ZombieHitState();
+    public ZombieChargeState chargeState = new ZombieChargeState();
+    public ZombieAttackState attackState = new ZombieAttackState();
+    public ZombieDeathState deathState = new ZombieDeathState();
+    public ZombieDanceState danceState = new ZombieDanceState();
+
+    public ZombieAIContext ctx;
+    public GameObject bulletHole;
+
+    private void Awake()
+    {
+        ctx = GetComponent<ZombieAIContext>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentState = initialState;
+        currentState = aliveState;
         currentState.EnterState(this);
         
     }
@@ -30,9 +38,31 @@ public class ZombieStateManager : MonoBehaviour
     public void ChangeState(ZombieBaseState newState)
     {
         if (newState == currentState) return;
-        newState.ExitState(this);
+        lastState = currentState;
+        currentState.ExitState(this);
         currentState = newState;
         newState.EnterState(this);
 
+    }
+
+    public void TakeHit(int damage, Vector3 hitPoint, Vector3 hitNormal)
+    {
+        ctx.Health -= damage;
+        GameObject impacto = Instantiate(bulletHole, hitPoint, Quaternion.LookRotation(hitNormal));
+        if (ctx.Health <= 0)
+        {
+            ChangeState(deathState);
+            return;
+        }
+
+        if (currentState == hitState)
+        {
+            currentState.EnterState(this);
+        }
+        else
+        {
+            lastState = currentState;
+            ChangeState(hitState);
+        }
     }
 }

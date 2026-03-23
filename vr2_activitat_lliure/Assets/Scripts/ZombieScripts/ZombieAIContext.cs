@@ -7,6 +7,7 @@ public class ZombieAIContext : MonoBehaviour
     public float SightDistance = 10f;
     public float AttackRange = 2f;
     public float ChargeRange = 4f;
+    public int Health = 3;
 
     [HideInInspector] public NavMeshAgent Agent;
     [HideInInspector] public Animator Animator;

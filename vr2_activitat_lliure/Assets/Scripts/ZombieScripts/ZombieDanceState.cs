@@ -15,8 +15,7 @@ public class ZombieDanceState : ZombieBaseState
     }
     public override void ExitState(ZombieStateManager zombie)
     {
-    }
-    public override void OnCollisionEnter(ZombieStateManager zombie)
-    {
+        var ctx = zombie.GetComponent<ZombieAIContext>();
+        ctx.Animator.SetBool("Dance", false);
     }
 }

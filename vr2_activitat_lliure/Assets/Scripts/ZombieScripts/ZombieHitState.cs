@@ -10,8 +10,12 @@ public class ZombieHitState : ZombieBaseState
     public override void EnterState(ZombieStateManager zombie)
     {
         timer = 0;
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Agent.isStopped = true;
+
+        //reiniciar animación
+        ctx.Animator.SetBool("Hit", false);
         ctx.Animator.SetBool("Hit", true);
     }
     public override void UpdateState(ZombieStateManager zombie)
@@ -20,18 +24,15 @@ public class ZombieHitState : ZombieBaseState
 
         if (timer > HitDuration)
         {
-            zombie.ChangeState(walkState);
+            zombie.ChangeState(zombie.lastState);
         }
-        else
-        {
-            Debug.Log("Recibe otro hit");
-        }
+        //else
+        //{
+        //    Debug.Log("Recibe otro hit");
+        //}
         //terminar, depende del hit de la bala que depende del collision entre bala y zombie
     }
     public override void ExitState(ZombieStateManager zombie)
-    {
-    }
-    public override void OnCollisionEnter(ZombieStateManager zombie)
     {
     }
 }

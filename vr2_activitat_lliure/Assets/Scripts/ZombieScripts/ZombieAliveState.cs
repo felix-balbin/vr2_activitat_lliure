@@ -45,7 +45,4 @@ public class ZombieAliveState : ZombieBaseState
         var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Animator.SetBool("Alive", false);
     }
-    public override void OnCollisionEnter(ZombieStateManager zombie)
-    {
-    }
 }

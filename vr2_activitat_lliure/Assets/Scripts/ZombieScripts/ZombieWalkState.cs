@@ -40,7 +40,4 @@ public class ZombieWalkState : ZombieBaseState
         var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Animator.SetBool("Walk", false);
     }
-    public override void OnCollisionEnter(ZombieStateManager zombie)
-    {
-    }
 }
