@@ -11,7 +11,8 @@ public class ZombieAttackState : ZombieBaseState
     public override void EnterState(ZombieStateManager zombie)
     {
         timer = 0;
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Agent.isStopped = true;
         ctx.Animator.SetBool("Attack", true);
     }

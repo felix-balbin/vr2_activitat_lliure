@@ -7,7 +7,8 @@ public class ZombieWalkState : ZombieBaseState
 
     public override void EnterState(ZombieStateManager zombie)
     {
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Agent.isStopped = true;
         ctx.Animator.SetBool("Walk", true);
     }
@@ -15,7 +16,8 @@ public class ZombieWalkState : ZombieBaseState
     {
         if (zombie.currentState != this) return;
 
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
 
         float dist = Vector3.Distance(ctx.transform.position, ctx.Target.position);
 
@@ -37,7 +39,8 @@ public class ZombieWalkState : ZombieBaseState
     }
     public override void ExitState(ZombieStateManager zombie)
     {
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Animator.SetBool("Walk", false);
     }
 }

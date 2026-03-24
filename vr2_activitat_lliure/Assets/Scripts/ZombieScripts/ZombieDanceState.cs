@@ -6,7 +6,8 @@ public class ZombieDanceState : ZombieBaseState
 
     public override void EnterState(ZombieStateManager zombie)
     {
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Agent.isStopped = true;
         ctx.Animator.SetBool("Dance", true);
     }
@@ -15,7 +16,8 @@ public class ZombieDanceState : ZombieBaseState
     }
     public override void ExitState(ZombieStateManager zombie)
     {
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Animator.SetBool("Dance", false);
     }
 }

@@ -9,7 +9,8 @@ public class ZombieAliveState : ZombieBaseState
     public bool dancingZombie;
     public override void EnterState(ZombieStateManager zombie)
     {
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Agent.ResetPath();
         ctx.Agent.isStopped = true;
         ctx.Animator.SetBool("Alive", true);
@@ -19,8 +20,8 @@ public class ZombieAliveState : ZombieBaseState
     public override void UpdateState(ZombieStateManager zombie)
     {
         if (zombie.currentState != this) return;
-
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
 
         float dist = Vector3.Distance(ctx.transform.position, ctx.Target.position);
 
@@ -42,7 +43,8 @@ public class ZombieAliveState : ZombieBaseState
     }
     public override void ExitState(ZombieStateManager zombie)
     {
-        var ctx = zombie.GetComponent<ZombieAIContext>();
+        var ctx = zombie.ctx;
+        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Animator.SetBool("Alive", false);
     }
 }
