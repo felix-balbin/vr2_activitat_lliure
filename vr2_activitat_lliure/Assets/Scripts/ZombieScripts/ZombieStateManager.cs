@@ -16,6 +16,9 @@ public class ZombieStateManager : MonoBehaviour
     public ZombieAIContext ctx;
     public GameObject bulletHole;
 
+    public bool isDeath;
+    public Score score;
+
     private void Awake()
     {
         ctx = GetComponent<ZombieAIContext>();
@@ -51,7 +54,18 @@ public class ZombieStateManager : MonoBehaviour
         GameObject impacto = Instantiate(bulletHole, hitPoint, Quaternion.LookRotation(hitNormal));
         if (ctx.Health <= 0)
         {
+            if (!isDeath)
+            {
+                isDeath = true;
+                score.AddScore(1);
+
+            }
             ChangeState(deathState);
+            return;
+        }
+
+        if (currentState == deathState)
+        {
             return;
         }
 
