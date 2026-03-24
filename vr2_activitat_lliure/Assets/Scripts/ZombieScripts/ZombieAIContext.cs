@@ -8,6 +8,7 @@ public class ZombieAIContext : MonoBehaviour
     public float AttackRange = 2f;
     public float ChargeRange = 4f;
     public int Health = 3;
+    public int randomDancer;
 
     [HideInInspector] public NavMeshAgent Agent;
     [HideInInspector] public Animator Animator;
@@ -17,6 +18,7 @@ public class ZombieAIContext : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         Animator = GetComponent<Animator>();
 
+        randomDancer = Random.Range(1, 3);
         //prueba :
 
         // Forzar: que el Animator no aplique root motion

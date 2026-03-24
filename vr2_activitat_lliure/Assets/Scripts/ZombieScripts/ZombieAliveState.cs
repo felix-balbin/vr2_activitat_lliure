@@ -5,7 +5,7 @@ public class ZombieAliveState : ZombieBaseState
 {
     public ZombieBaseState walkState;
     public ZombieBaseState danceState;
-    public int randomNum;
+    //public int randomNum;
     public bool dancingZombie;
     public override void EnterState(ZombieStateManager zombie)
     {
@@ -15,7 +15,7 @@ public class ZombieAliveState : ZombieBaseState
         ctx.Agent.isStopped = true;
         ctx.Animator.SetBool("Alive", true);
 
-        randomNum = Random.Range(1, 5);
+        //randomNum = Random.Range(1, 5);
     }
     public override void UpdateState(ZombieStateManager zombie)
     {
@@ -25,7 +25,7 @@ public class ZombieAliveState : ZombieBaseState
 
         float dist = Vector3.Distance(ctx.transform.position, ctx.Target.position);
 
-        if (randomNum == 3)
+        if (zombie.ctx.randomDancer == 3)
         {
             zombie.ChangeState(danceState);
         }
