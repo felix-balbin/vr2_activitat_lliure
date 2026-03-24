@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
         if (jugador != null)
         {
-            jugador.transform.position = new Vector3(5.6f, -0.248f, -7.718f);
+            jugador.transform.position = new Vector3(-13.82f, -0.37f, 15f);
         }
     }
 
