@@ -388,7 +388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a14a628b440ce6488180ed35b67d333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Score
-  score: 10
   textScore: {fileID: 628383507}
 --- !u!4 &56773176
 Transform:
@@ -1748,7 +1747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2666126897319158058, guid: 1e158a7fce016ad4ea6ff8be3cd0adb7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0149
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2666126897319158058, guid: 1e158a7fce016ad4ea6ff8be3cd0adb7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3426,9 +3425,9 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205180755}
-        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
-        m_MethodName: FireBullet
+      - m_Target: {fileID: 1205180759}
+        m_TargetAssemblyTypeName: Arms, Assembly-CSharp
+        m_MethodName: BurstFire
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9362,6 +9361,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056740034}
   m_CullTransparentMesh: 1
+--- !u!1 &1064283404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064283406}
+  - component: {fileID: 1064283405}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1064283405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064283404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e36a6c55f0d7fc45ad6340f89ec5524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!4 &1064283406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064283404}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.69173, y: 1.61089, z: -3.46593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1091797882
 GameObject:
   m_ObjectHideFlags: 0
@@ -10244,9 +10287,6 @@ PrefabInstance:
       addedObject: {fileID: 1205180754}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1205180755}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1205180757}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
       insertIndex: -1
@@ -10254,6 +10294,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1205180758}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1205180759}
   m_SourcePrefab: {fileID: 100100000, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
 --- !u!4 &1205180753 stripped
 Transform:
@@ -10281,25 +10324,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.08, y: 0.9, z: 0.56}
   m_Center: {x: 0, y: -0.06, z: 0}
---- !u!114 &1205180755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943695467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4fb6bb8b64e7a74e919e2eaed986d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  bulletPrefab: {fileID: 9176006274665682641, guid: 628bab0020086294e925aa6903636131, type: 3}
-  firePoint: {fileID: 742780033}
-  bulletSpeed: 20
-  bulletLifetime: 5
-  clip: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
-  source: {fileID: 1205180758}
-  particles: {fileID: 1205180757}
 --- !u!199 &1205180756
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -15258,6 +15282,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1205180759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943695467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7b266e47bdc5c4dbc7f2718799267b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arms
+  bulletPrefab: {fileID: 9176006274665682641, guid: 628bab0020086294e925aa6903636131, type: 3}
+  bulletSpawn: {fileID: 742780033}
+  bulletForce: 50
+  autoFireRate: 0.1
+  burstCount: 3
+  burstFireRate: 0.08
+  shootParticles: {fileID: 1205180757}
+  shootSound: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
 --- !u!1001 &1245535485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21140,9 +21184,6 @@ PrefabInstance:
       addedObject: {fileID: 1879136296}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1879136297}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1879136299}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
       insertIndex: -1
@@ -21150,6 +21191,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1879136300}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1879136301}
   m_SourcePrefab: {fileID: 100100000, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
 --- !u!1 &1393936657 stripped
 GameObject:
@@ -21222,9 +21266,9 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1879136297}
-        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
-        m_MethodName: FireBullet
+      - m_Target: {fileID: 1879136301}
+        m_TargetAssemblyTypeName: Arms, Assembly-CSharp
+        m_MethodName: StartAutoFire
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21236,7 +21280,19 @@ MonoBehaviour:
         m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1879136301}
+        m_TargetAssemblyTypeName: Arms, Assembly-CSharp
+        m_MethodName: StopAutoFire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
@@ -27484,25 +27540,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.97, y: 0.27, z: 0.15}
   m_Center: {x: 0, y: 0.045, z: 0.22}
---- !u!114 &1879136297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393936657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4fb6bb8b64e7a74e919e2eaed986d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  bulletPrefab: {fileID: 9176006274665682641, guid: 628bab0020086294e925aa6903636131, type: 3}
-  firePoint: {fileID: 1456555201}
-  bulletSpeed: 20
-  bulletLifetime: 5
-  clip: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
-  source: {fileID: 1879136300}
-  particles: {fileID: 1879136299}
 --- !u!199 &1879136298
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -32461,6 +32498,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1879136301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393936657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7b266e47bdc5c4dbc7f2718799267b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arms
+  bulletPrefab: {fileID: 9176006274665682641, guid: 628bab0020086294e925aa6903636131, type: 3}
+  bulletSpawn: {fileID: 1456555201}
+  bulletForce: 50
+  autoFireRate: 0.1
+  burstCount: 3
+  burstFireRate: 0.08
+  shootParticles: {fileID: 1879136299}
+  shootSound: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
 --- !u!1 &1924096193
 GameObject:
   m_ObjectHideFlags: 0
@@ -33954,3 +34011,4 @@ SceneRoots:
   - {fileID: 1746814313}
   - {fileID: 56773176}
   - {fileID: 318051360}
+  - {fileID: 1064283406}
