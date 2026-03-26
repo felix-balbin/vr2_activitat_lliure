@@ -13,7 +13,7 @@ public class ZombieAttackState : ZombieBaseState
         timer = 0;
         var ctx = zombie.ctx;
         //var ctx = zombie.GetComponent<ZombieAIContext>();
-        ctx.Agent.isStopped = true;
+        ctx.Agent.isStopped = false;
         ctx.Animator.SetBool("Attack", true);
     }
     public override void UpdateState(ZombieStateManager zombie)
@@ -27,6 +27,8 @@ public class ZombieAttackState : ZombieBaseState
     }
     public override void ExitState(ZombieStateManager zombie)
     {
+        zombie.ctx.Agent.isStopped = true;
+        zombie.ctx.Animator.SetBool("Attack", false);
     }
 
 }

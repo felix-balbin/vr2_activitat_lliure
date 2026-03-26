@@ -4,6 +4,10 @@ using UnityEngine;
 public class ZombieHitState : ZombieBaseState
 {
     public ZombieBaseState walkState;
+    public ZombieBaseState danceState;
+    public ZombieBaseState chargeState;
+    public ZombieBaseState attackState;
+
     public ZombieBaseState deathState;
     private float timer;
     public float HitDuration = 1f;
@@ -15,8 +19,8 @@ public class ZombieHitState : ZombieBaseState
         ctx.Agent.isStopped = true;
 
         //reiniciar animación
-        ctx.Animator.SetBool("Hit", false);
-        ctx.Animator.SetBool("Hit", true);
+        ctx.Animator.ResetTrigger("Hit");
+        ctx.Animator.SetTrigger("Hit");
     }
     public override void UpdateState(ZombieStateManager zombie)
     {
@@ -26,13 +30,9 @@ public class ZombieHitState : ZombieBaseState
         {
             zombie.ChangeState(zombie.lastState);
         }
-        //else
-        //{
-        //    Debug.Log("Recibe otro hit");
-        //}
-        //terminar, depende del hit de la bala que depende del collision entre bala y zombie
     }
     public override void ExitState(ZombieStateManager zombie)
     {
+
     }
 }

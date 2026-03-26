@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver.Primitives;
 
 public class ZombieAIContext : MonoBehaviour
 {
     public Transform Target;
-    public float SightDistance = 10f;
-    public float AttackRange = 2f;
-    public float ChargeRange = 4f;
+    public float SightDistance = 5f;
+    public float AttackRange = 1f;
+    public float ChargeRange = 2f;
+    public float WalkSpeed = 1f;
     public int Health = 3;
     public int randomDancer;
 
@@ -18,7 +20,7 @@ public class ZombieAIContext : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         Animator = GetComponent<Animator>();
 
-        randomDancer = Random.Range(1, 3);
+        randomDancer = Random.Range(0,2);
         //prueba :
 
         // Forzar: que el Animator no aplique root motion

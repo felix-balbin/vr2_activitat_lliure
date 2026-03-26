@@ -30,5 +30,6 @@ public class ZombieChargeState : ZombieBaseState
     }
     public override void ExitState(ZombieStateManager zombie)
     {
+        zombie.ctx.Animator.SetBool("Charge", false);
     }
 }

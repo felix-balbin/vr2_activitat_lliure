@@ -22,6 +22,27 @@ public class ZombieStateManager : MonoBehaviour
     private void Awake()
     {
         ctx = GetComponent<ZombieAIContext>();
+
+        aliveState.walkState = walkState;
+
+        aliveState.danceState = danceState;
+
+        walkState.chargeState = chargeState;
+
+        chargeState.attackState = attackState;
+
+        attackState.walkState = walkState;
+
+
+        hitState.walkState = walkState;
+
+        hitState.danceState = danceState;
+
+        hitState.chargeState = chargeState;
+
+        hitState.attackState = attackState;
+
+        hitState.deathState = deathState;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,8 +62,10 @@ public class ZombieStateManager : MonoBehaviour
     public void ChangeState(ZombieBaseState newState)
     {
         if (newState == currentState) return;
+
         lastState = currentState;
         currentState.ExitState(this);
+
         currentState = newState;
         newState.EnterState(this);
 

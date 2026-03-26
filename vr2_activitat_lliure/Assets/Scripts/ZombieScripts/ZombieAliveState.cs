@@ -6,7 +6,7 @@ public class ZombieAliveState : ZombieBaseState
     public ZombieBaseState walkState;
     public ZombieBaseState danceState;
     //public int randomNum;
-    public bool dancingZombie;
+    //public bool dancingZombie;
     public override void EnterState(ZombieStateManager zombie)
     {
         var ctx = zombie.ctx;
@@ -15,17 +15,7 @@ public class ZombieAliveState : ZombieBaseState
         ctx.Agent.isStopped = true;
         ctx.Animator.SetBool("Alive", true);
 
-        //randomNum = Random.Range(1, 5);
-    }
-    public override void UpdateState(ZombieStateManager zombie)
-    {
-        if (zombie.currentState != this) return;
-        var ctx = zombie.ctx;
-        //var ctx = zombie.GetComponent<ZombieAIContext>();
-
-        float dist = Vector3.Distance(ctx.transform.position, ctx.Target.position);
-
-        if (zombie.ctx.randomDancer == 3)
+        if (ctx.randomDancer == 1)
         {
             zombie.ChangeState(danceState);
         }
@@ -33,6 +23,18 @@ public class ZombieAliveState : ZombieBaseState
         {
             zombie.ChangeState(walkState);
         }
+
+        //randomNum = Random.Range(1, 5);
+    }
+    public override void UpdateState(ZombieStateManager zombie)
+    {
+        //if (zombie.currentState != this) return;
+        //var ctx = zombie.ctx;
+        ////var ctx = zombie.GetComponent<ZombieAIContext>();
+
+        //float dist = Vector3.Distance(ctx.transform.position, ctx.Target.position);
+
+
 
         //Si la distancia entre el target y el boss es menor que la distancia de vista,
         //lo detecta y entra al estado de chase
@@ -43,8 +45,8 @@ public class ZombieAliveState : ZombieBaseState
     }
     public override void ExitState(ZombieStateManager zombie)
     {
-        var ctx = zombie.ctx;
+        //var ctx = zombie.ctx;
         //var ctx = zombie.GetComponent<ZombieAIContext>();
-        ctx.Animator.SetBool("Alive", false);
+        zombie.ctx.Animator.SetBool("Alive", false);
     }
 }
