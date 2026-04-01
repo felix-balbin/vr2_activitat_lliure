@@ -12,6 +12,7 @@ public class ZombieDeathState : ZombieBaseState
         var ctx = zombie.ctx;
         //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Agent.isStopped = true;
+        ctx.Animator.ResetTrigger("Death");
         ctx.Animator.SetTrigger("Death");
     }
     public override void UpdateState(ZombieStateManager zombie)

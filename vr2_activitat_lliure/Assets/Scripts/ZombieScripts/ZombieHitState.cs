@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ZombieHitState : ZombieBaseState
 {
@@ -28,7 +29,15 @@ public class ZombieHitState : ZombieBaseState
 
         if (timer > HitDuration)
         {
-            zombie.ChangeState(zombie.lastState);
+            if (zombie.isDeath)
+            {
+                zombie.score.AddScore(1);
+                zombie.ChangeState(deathState);
+            }
+            else
+            {
+                zombie.ChangeState(zombie.lastState);
+            }
         }
     }
     public override void ExitState(ZombieStateManager zombie)

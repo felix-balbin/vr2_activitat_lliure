@@ -19,9 +19,17 @@ public class ZombieStateManager : MonoBehaviour
     public bool isDeath;
     public Score score;
 
+    public int nHits;
+
+    public Renderer rendererMesh;
+    public Material matNormal;
+    public Material matYellow;
+    public Material matRed;
+
     private void Awake()
     {
         ctx = GetComponent<ZombieAIContext>();
+        rendererMesh = GetComponentInChildren<Renderer>();
 
         aliveState.walkState = walkState;
 
@@ -50,7 +58,7 @@ public class ZombieStateManager : MonoBehaviour
     {
         currentState = aliveState;
         currentState.EnterState(this);
-        
+        rendererMesh.material = matNormal;
     }
 
     // Update is called once per frame
@@ -73,18 +81,19 @@ public class ZombieStateManager : MonoBehaviour
 
     public void TakeHit(int damage, Vector3 hitPoint, Vector3 hitNormal)
     {
+        if (isDeath) return;
         ctx.Health -= damage;
         GameObject impacto = Instantiate(bulletHole, hitPoint, Quaternion.LookRotation(hitNormal));
+        nHits++;
         if (ctx.Health <= 0)
         {
             if (!isDeath)
             {
                 isDeath = true;
-                score.AddScore(1);
-
+                //score.AddScore(1);
+                //ChangeState(deathState);
             }
-            ChangeState(deathState);
-            return;
+
         }
 
         if (currentState == deathState)
@@ -94,12 +103,21 @@ public class ZombieStateManager : MonoBehaviour
 
         if (currentState == hitState)
         {
-            currentState.EnterState(this);
+            hitState.EnterState(this);
         }
         else
         {
             lastState = currentState;
             ChangeState(hitState);
         }
+        if (nHits == 1)
+        {
+            rendererMesh.material = matYellow;
+        }
+        else if(nHits == 2)
+        {
+            rendererMesh.material = matRed;
+        }
+
     }
 }
