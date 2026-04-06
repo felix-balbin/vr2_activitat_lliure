@@ -1275,9 +1275,14 @@ MonoBehaviour:
   isDeath: 0
   score: {fileID: 8951101260424610679}
   nHits: 0
+  rendererMesh: {fileID: 0}
   matNormal: {fileID: 2100000, guid: 378eebc58468efa47af7a8b8169abb0a, type: 2}
   matYellow: {fileID: 2100000, guid: dbcebd16a466585459c49ec52e9734c9, type: 2}
   matRed: {fileID: 2100000, guid: 3b00c529441acb0408646a9b7b31c61e, type: 2}
+  audioClipArray: []
+  zombieHitClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioHitSource: {fileID: 0}
 --- !u!136 &273855605
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1556,9 +1561,14 @@ MonoBehaviour:
   isDeath: 0
   score: {fileID: 8951101260424610679}
   nHits: 0
+  rendererMesh: {fileID: 0}
   matNormal: {fileID: 2100000, guid: 378eebc58468efa47af7a8b8169abb0a, type: 2}
   matYellow: {fileID: 2100000, guid: dbcebd16a466585459c49ec52e9734c9, type: 2}
   matRed: {fileID: 2100000, guid: 3b00c529441acb0408646a9b7b31c61e, type: 2}
+  audioClipArray: []
+  zombieHitClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioHitSource: {fileID: 0}
 --- !u!95 &307295078
 Animator:
   serializedVersion: 7
@@ -2944,9 +2954,14 @@ MonoBehaviour:
   isDeath: 0
   score: {fileID: 8951101260424610679}
   nHits: 0
+  rendererMesh: {fileID: 0}
   matNormal: {fileID: 2100000, guid: 378eebc58468efa47af7a8b8169abb0a, type: 2}
   matYellow: {fileID: 2100000, guid: dbcebd16a466585459c49ec52e9734c9, type: 2}
   matRed: {fileID: 2100000, guid: 3b00c529441acb0408646a9b7b31c61e, type: 2}
+  audioClipArray: []
+  zombieHitClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioHitSource: {fileID: 0}
 --- !u!136 &902615504
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3693,9 +3708,14 @@ MonoBehaviour:
   isDeath: 0
   score: {fileID: 8951101260424610679}
   nHits: 0
+  rendererMesh: {fileID: 0}
   matNormal: {fileID: 2100000, guid: 378eebc58468efa47af7a8b8169abb0a, type: 2}
   matYellow: {fileID: 2100000, guid: dbcebd16a466585459c49ec52e9734c9, type: 2}
   matRed: {fileID: 2100000, guid: 3b00c529441acb0408646a9b7b31c61e, type: 2}
+  audioClipArray: []
+  zombieHitClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioHitSource: {fileID: 0}
 --- !u!136 &1142823563
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3986,9 +4006,14 @@ MonoBehaviour:
   isDeath: 0
   score: {fileID: 8951101260424610679}
   nHits: 0
+  rendererMesh: {fileID: 0}
   matNormal: {fileID: 2100000, guid: 378eebc58468efa47af7a8b8169abb0a, type: 2}
   matYellow: {fileID: 2100000, guid: dbcebd16a466585459c49ec52e9734c9, type: 2}
   matRed: {fileID: 2100000, guid: 3b00c529441acb0408646a9b7b31c61e, type: 2}
+  audioClipArray: []
+  zombieHitClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioHitSource: {fileID: 0}
 --- !u!136 &1228759646
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4327,9 +4352,14 @@ MonoBehaviour:
   isDeath: 0
   score: {fileID: 8951101260424610679}
   nHits: 0
+  rendererMesh: {fileID: 0}
   matNormal: {fileID: 2100000, guid: 378eebc58468efa47af7a8b8169abb0a, type: 2}
   matYellow: {fileID: 2100000, guid: dbcebd16a466585459c49ec52e9734c9, type: 2}
   matRed: {fileID: 2100000, guid: 3b00c529441acb0408646a9b7b31c61e, type: 2}
+  audioClipArray: []
+  zombieHitClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioHitSource: {fileID: 0}
 --- !u!136 &1375444628
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5188,6 +5218,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8580472321882820962, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870949171308253924, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4218042543868614358, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.12
@@ -5272,13 +5310,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3269078736864694157, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3269078737026641673, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 263391901874896520}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3269078736864694153, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2004550131}
   m_SourcePrefab: {fileID: 100100000, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
 --- !u!4 &1589880313 stripped
 Transform:
@@ -5288,6 +5330,11 @@ Transform:
 --- !u!20 &1589880314 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3269078736864694159, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
+  m_PrefabInstance: {fileID: 1589880312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1589880315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3269078736864694153, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
   m_PrefabInstance: {fileID: 1589880312}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1607989121
@@ -5410,9 +5457,14 @@ MonoBehaviour:
   isDeath: 0
   score: {fileID: 8951101260424610679}
   nHits: 0
+  rendererMesh: {fileID: 0}
   matNormal: {fileID: 2100000, guid: 378eebc58468efa47af7a8b8169abb0a, type: 2}
   matYellow: {fileID: 2100000, guid: dbcebd16a466585459c49ec52e9734c9, type: 2}
   matRed: {fileID: 2100000, guid: 3b00c529441acb0408646a9b7b31c61e, type: 2}
+  audioClipArray: []
+  zombieHitClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioHitSource: {fileID: 0}
 --- !u!136 &1607989125
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6069,9 +6121,14 @@ MonoBehaviour:
   isDeath: 0
   score: {fileID: 8951101260424610679}
   nHits: 0
+  rendererMesh: {fileID: 0}
   matNormal: {fileID: 2100000, guid: 378eebc58468efa47af7a8b8169abb0a, type: 2}
   matYellow: {fileID: 2100000, guid: dbcebd16a466585459c49ec52e9734c9, type: 2}
   matRed: {fileID: 2100000, guid: 3b00c529441acb0408646a9b7b31c61e, type: 2}
+  audioClipArray: []
+  zombieHitClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioHitSource: {fileID: 0}
 --- !u!136 &1802163026
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6658,6 +6715,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3269078736864694154, guid: 124b07ebfdf93394f873d28df1b840bc, type: 3}
   m_PrefabInstance: {fileID: 1589880312}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2004550131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589880315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &2007180209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 610879992407072788, guid: 3d65cd29abc48274ebb47c5fb2623642, type: 3}
@@ -6816,7 +6887,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7761298789632376380}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -6913,7 +6984,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2537329303658629244}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -7823,6 +7894,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a9be5ea26ae201c4e861236d75a1768e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3181618676262097681}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a9be5ea26ae201c4e861236d75a1768e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6374799008126823840}
   m_SourcePrefab: {fileID: 100100000, guid: a9be5ea26ae201c4e861236d75a1768e, type: 3}
 --- !u!1 &2537329303658629244 stripped
 GameObject:
@@ -22838,6 +22912,37 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
   source: {fileID: 142708598193098695}
   particles: {fileID: 3938835889406760753}
+--- !u!114 &6374799008126823840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537329303658629244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 284206998
+      Data2: 1252908502
+      Data3: -1753798490
+      Data4: -628825622
+    Path: event:/mrfriends-pistol-shot-233473
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!198 &6546827806644230637
 ParticleSystem:
   m_ObjectHideFlags: 0
