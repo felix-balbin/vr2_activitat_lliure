@@ -23,7 +23,7 @@ public class ZombieStateManager : MonoBehaviour
 
     public int nHits;
 
-    public Renderer rendererMesh;
+    private Renderer rendererMesh;
     public Material matNormal;
     public Material matYellow;
     public Material matRed;
@@ -131,9 +131,10 @@ public class ZombieStateManager : MonoBehaviour
             rendererMesh.material = matRed;
         }
 
-        void OnDestroy()
-        {
-            zombieInstance.release();
-        }
     }
+    void OnDestroy()
+    {
+        zombieInstance.release();
+    }
+
 }
