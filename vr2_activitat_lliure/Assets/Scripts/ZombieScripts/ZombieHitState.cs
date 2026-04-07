@@ -29,10 +29,18 @@ public class ZombieHitState : ZombieBaseState
 
         if (timer > HitDuration)
         {
-            if (zombie.isDeath)
+            if (zombie.pendingDeath)
             {
+                zombie.isDeath = true;
+                zombie.zombieInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+                zombie.ctx.Animator.ResetTrigger("Death");
+                zombie.ctx.Animator.SetTrigger("Death");
+
                 zombie.score.AddScore(1);
                 zombie.ChangeState(deathState);
+                zombie.pendingDeath = false;
+
             }
             else
             {

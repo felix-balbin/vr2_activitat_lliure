@@ -64,12 +64,12 @@ public class ZombieSpawn : MonoBehaviour
     {
         ZombieStateManager zombieStateManager = zombie.GetComponent<ZombieStateManager>();
 
-        while (zombie != null && !zombieStateManager.isDeath)
+        while (zombie != null)
         {
             yield return null;
         }
 
-        yield return new WaitForSeconds(3f);
+        //yield return new WaitForSeconds(3f);
 
         zombiesAlive--;
     }

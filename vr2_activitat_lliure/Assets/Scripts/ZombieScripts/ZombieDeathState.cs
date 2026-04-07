@@ -8,12 +8,14 @@ public class ZombieDeathState : ZombieBaseState
     public float DissapearDuration = 3f;
     public override void EnterState(ZombieStateManager zombie)
     {
+        Debug.Log("ENTER DEATH STATE");
         timer = 0;
         var ctx = zombie.ctx;
-        //var ctx = zombie.GetComponent<ZombieAIContext>();
         ctx.Agent.isStopped = true;
-        ctx.Animator.ResetTrigger("Death");
-        ctx.Animator.SetTrigger("Death");
+        ctx.Agent.enabled = false;
+
+        //ctx.Animator.ResetTrigger("Death");
+        //ctx.Animator.SetTrigger("Death");
     }
     public override void UpdateState(ZombieStateManager zombie)
     {

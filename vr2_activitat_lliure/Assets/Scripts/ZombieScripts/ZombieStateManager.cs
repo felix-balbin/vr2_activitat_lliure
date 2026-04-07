@@ -19,6 +19,7 @@ public class ZombieStateManager : MonoBehaviour
     public GameObject bulletHole;
 
     public bool isDeath;
+    public bool pendingDeath;
     public Score score;
 
     public int nHits;
@@ -30,7 +31,7 @@ public class ZombieStateManager : MonoBehaviour
 
     public string zombieEvent;
     public string zombieHitEvent;
-    private EventInstance zombieInstance;
+    public EventInstance zombieInstance;
 
     private void Awake()
     {
@@ -93,18 +94,21 @@ public class ZombieStateManager : MonoBehaviour
     {
         if (isDeath) return;
         ctx.Health -= damage;
-        GameObject impacto = Instantiate(bulletHole, hitPoint, Quaternion.LookRotation(hitNormal));
+        //GameObject impacto = Instantiate(bulletHole, hitPoint, Quaternion.LookRotation(hitNormal));
         nHits++;
+
         RuntimeManager.PlayOneShot(zombieHitEvent, hitPoint);
+
         if (ctx.Health <= 0)
         {
-            if (!isDeath)
-            {
-                isDeath = true;
-                zombieInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                //score.AddScore(1);
-                //ChangeState(deathState);
-            }
+            //if (!isDeath)
+            //{
+            //    isDeath = true;
+            //    zombieInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            //    //score.AddScore(1);
+            //    //ChangeState(deathState);
+            //}
+            pendingDeath = true;
 
         }
 
