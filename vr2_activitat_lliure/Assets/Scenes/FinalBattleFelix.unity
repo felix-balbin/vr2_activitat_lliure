@@ -3710,7 +3710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9501d8831663ab645b4c04b86a23b4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawn
-  prefabZombie: {fileID: 7186526841753695248, guid: 22e8b14c440915e479e4c9732bc36bf7, type: 3}
+  prefabZombie: {fileID: 3599005549407535006, guid: 22e8b14c440915e479e4c9732bc36bf7, type: 3}
   spawners:
   - {fileID: 549827085}
   - {fileID: 282425058}
@@ -3720,6 +3720,7 @@ MonoBehaviour:
   maxZombies: 10
   spawnTime: 3
   Target: {fileID: 2004550130}
+  score: {fileID: 8951101260424610679}
 --- !u!4 &1506724710
 Transform:
   m_ObjectHideFlags: 0
@@ -3746,6 +3747,10 @@ PrefabInstance:
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_Name
       value: XR Interaction Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5682,103 +5687,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &142708598193098695
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2537329303658629244}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &194502422555152598
 GameObject:
   m_ObjectHideFlags: 0
@@ -6115,9 +6023,6 @@ PrefabInstance:
       addedObject: {fileID: 5447338816293348605}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96601d15707e04847b2b3f3dc4aac568, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7410817814852209154}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96601d15707e04847b2b3f3dc4aac568, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5619040525422175785}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 96601d15707e04847b2b3f3dc4aac568, type: 3}
       insertIndex: -1
@@ -6160,7 +6065,7 @@ MonoBehaviour:
   burstCount: 3
   burstFireRate: 0.08
   shootParticles: {fileID: 6546827806644230637}
-  shootSound: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
+  shootEvent: event:/mrfriends-pistol-shot-233473
 --- !u!223 &1626439664076538539
 Canvas:
   m_ObjectHideFlags: 0
@@ -6502,7 +6407,7 @@ MonoBehaviour:
   burstCount: 3
   burstFireRate: 0.08
   shootParticles: {fileID: 3921661750331894595}
-  shootSound: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
+  shootEvent: event:/mrfriends-pistol-shot-233473
 --- !u!1001 &2537329303658629243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6595,9 +6500,6 @@ PrefabInstance:
       addedObject: {fileID: 6374799008126823839}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a9be5ea26ae201c4e861236d75a1768e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 142708598193098695}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a9be5ea26ae201c4e861236d75a1768e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3938835889406760753}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a9be5ea26ae201c4e861236d75a1768e, type: 3}
       insertIndex: -1
@@ -6628,7 +6530,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8282366023063986497}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -26564,6 +26466,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2390624723281264562}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7425171722846178404}
   m_SourcePrefab: {fileID: 100100000, guid: 38f192086f080f34fa6ab4c006404d0e, type: 3}
 --- !u!1 &6997304984854103812 stripped
 GameObject:
@@ -26847,103 +26752,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!82 &7410817814852209154
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091920480190358062}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!65 &7425171722846178403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26965,6 +26773,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.08, y: 0.9, z: 0.56}
   m_Center: {x: 0, y: -0.06, z: 0}
+--- !u!114 &7425171722846178404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6997304984854103812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 284206998
+      Data2: 1252908502
+      Data3: -1753798490
+      Data4: -628825622
+    Path: event:/mrfriends-pistol-shot-233473
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7761298789632376380
 GameObject:
   m_ObjectHideFlags: 0
@@ -27116,6 +26955,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1190679036404776174}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8670488690943942877}
   m_SourcePrefab: {fileID: 100100000, guid: 2b25aed9f7633854ea99ab7085984231, type: 3}
 --- !u!1 &8282366023063986497 stripped
 GameObject:
@@ -27400,8 +27242,8 @@ MonoBehaviour:
       Data4: -628825622
     Path: event:/mrfriends-pistol-shot-233473
   Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -27437,6 +27279,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8670488690943942877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282366023063986497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 284206998
+      Data2: 1252908502
+      Data3: -1753798490
+      Data4: -628825622
+    Path: event:/mrfriends-pistol-shot-233473
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8951101260424610678
 GameObject:
   m_ObjectHideFlags: 0

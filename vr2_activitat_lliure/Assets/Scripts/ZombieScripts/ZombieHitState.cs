@@ -37,7 +37,9 @@ public class ZombieHitState : ZombieBaseState
                 zombie.ctx.Animator.ResetTrigger("Death");
                 zombie.ctx.Animator.SetTrigger("Death");
 
-                zombie.score.AddScore(1);
+                //zombie.score.AddScore(1);
+                //Debug.Log(zombie.score);
+
                 zombie.ChangeState(deathState);
                 zombie.pendingDeath = false;
 
