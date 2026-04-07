@@ -1,4 +1,6 @@
-using UnityEngine; 
+using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class ShootBullet : MonoBehaviour
 {
@@ -7,14 +9,17 @@ public class ShootBullet : MonoBehaviour
     public float bulletSpeed = 40f;
     public float bulletLifetime = 5f;
 
-    public AudioClip clip;
-    public AudioSource source;
+    //public AudioClip clip;
+    //public AudioSource source;
     public ParticleSystem particles;
+
+    //fmod
+    public string shootEvent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        source = GetComponent<AudioSource>();
+        //source = GetComponent<AudioSource>();
         particles = GetComponent<ParticleSystem>();
         
     }
@@ -32,10 +37,16 @@ public class ShootBullet : MonoBehaviour
             rbBullet.linearVelocity = firePoint.forward * bulletSpeed;
         }
 
-        // Sonido
-        if (clip != null && source != null)
+        // Sonido old
+        //if (clip != null && source != null)
+        //{
+        //    source.PlayOneShot(clip);
+        //}
+
+        //Sonido FMOD
+        if(shootEvent!=null)
         {
-            source.PlayOneShot(clip);
+            RuntimeManager.PlayOneShot(shootEvent, firePoint.position);
         }
 
         // Partículas

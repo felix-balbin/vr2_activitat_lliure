@@ -1,3 +1,5 @@
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
 public class ZombieStateManager : MonoBehaviour
@@ -26,16 +28,14 @@ public class ZombieStateManager : MonoBehaviour
     public Material matYellow;
     public Material matRed;
 
-    public AudioClip[] audioClipArray;
-    public AudioClip zombieHitClip;
-    public AudioSource audioSource;
-    public AudioSource audioHitSource;
+    public string zombieEvent;
+    public string zombieHitEvent;
+    private EventInstance zombieInstance;
 
     private void Awake()
     {
         ctx = GetComponent<ZombieAIContext>();
         rendererMesh = GetComponentInChildren<Renderer>();
-        audioSource = GetComponent<AudioSource>();
 
         aliveState.walkState = walkState;
 
@@ -66,7 +66,9 @@ public class ZombieStateManager : MonoBehaviour
         currentState.EnterState(this);
         rendererMesh.material = matNormal;
 
-        PlayRandomAudio();
+        zombieInstance = RuntimeManager.CreateInstance(zombieEvent);
+        RuntimeManager.AttachInstanceToGameObject(zombieInstance, gameObject);
+        zombieInstance.start();
     }
 
     // Update is called once per frame
@@ -93,13 +95,13 @@ public class ZombieStateManager : MonoBehaviour
         ctx.Health -= damage;
         GameObject impacto = Instantiate(bulletHole, hitPoint, Quaternion.LookRotation(hitNormal));
         nHits++;
-        audioSource.PlayOneShot(zombieHitClip);
+        RuntimeManager.PlayOneShot(zombieHitEvent, hitPoint);
         if (ctx.Health <= 0)
         {
             if (!isDeath)
             {
                 isDeath = true;
-                audioSource.Stop();
+                zombieInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 //score.AddScore(1);
                 //ChangeState(deathState);
             }
@@ -129,13 +131,9 @@ public class ZombieStateManager : MonoBehaviour
             rendererMesh.material = matRed;
         }
 
-    }
-
-    public void PlayRandomAudio()
-    {
-        int randomAudio = Random.Range(0, (audioClipArray.Length)-2);
-        audioSource.clip = audioClipArray[randomAudio];
-        audioSource.loop = true;
-        audioSource.Play();
+        void OnDestroy()
+        {
+            zombieInstance.release();
+        }
     }
 }
