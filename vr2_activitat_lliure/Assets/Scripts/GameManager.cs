@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
     private int armasRecogidas = 0;
     private bool escenaCargada = false;
     private bool siguienteNivel = false;
+    public GameObject pantallaFinal;
+    private bool juegoTerminado = false;
 
     void Awake()
     {
@@ -19,6 +22,14 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    void Start()
+    {
+        if (pantallaFinal != null)
+        {
+            pantallaFinal.SetActive(false);
         }
     }
 
@@ -57,5 +68,24 @@ public class GameManager : MonoBehaviour
             siguienteNivel = true;
             TeletransportarJugador();
         }
+        else if (score >= 30 && siguienteNivel && escenaCargada && !juegoTerminado)
+        {
+            juegoTerminado = true;
+            StartCoroutine(FinalDelJuego());
+        }
+    }
+
+    IEnumerator FinalDelJuego()
+    {
+        if (pantallaFinal != null)
+        {
+            pantallaFinal.SetActive(true);
+        }
+        yield return new WaitForSeconds(3f);
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 }
