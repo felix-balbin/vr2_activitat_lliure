@@ -11,6 +11,11 @@ public class Score : MonoBehaviour
         score += points;
         UpdateScore();
         GameManager.instancia.CheckScore(score);
+        
+        if (score >= 30)
+        {
+            ResetScore();
+        }
     }
 
     public void ResetScore()
