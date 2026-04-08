@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{8e3f7218-7d6c-43d5-9146-39762b8ba054}">
+		<property name="assetPath">
+			<value>audio_exintor.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.3440000000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f4f00e73-55d6-40a9-84f2-e269c2130d11}</destination>
+		</relationship>
+	</object>
+</objects>

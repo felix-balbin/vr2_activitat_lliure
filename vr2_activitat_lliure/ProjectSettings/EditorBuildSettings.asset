@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DefScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
   - enabled: 1
-    path: Assets/Scenes/FinalBattle.unity
+    path: Assets/Scenes/FinalBattleFelix.unity
     guid: e47d271e85ad2e649800fc5b0f04a11d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 957d7e4ca5dda984290da9e28fada793, type: 2}

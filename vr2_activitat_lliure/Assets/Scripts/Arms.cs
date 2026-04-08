@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using UnityEngine;
 
@@ -15,14 +16,17 @@ public class Arms : MonoBehaviour
 
     [Header("Effects")]
     [SerializeField] ParticleSystem shootParticles;
-    public AudioClip shootSound;
-    private AudioSource audioSource;
+    //public AudioClip shootSound;
+    //private AudioSource audioSource;
 
     private Coroutine fireCoroutine;
 
+    //fmod
+    public string shootEvent;
+
     public void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     public void Shoot()
@@ -36,8 +40,15 @@ public class Arms : MonoBehaviour
         if (shootParticles != null)
             shootParticles.Play();
 
-        if (shootSound != null)
-            audioSource.PlayOneShot(shootSound);
+        //if (shootSound != null)
+        //    audioSource.PlayOneShot(shootSound);
+
+        //Sonido FMOD
+        if (shootEvent != null)
+        {
+            RuntimeManager.PlayOneShot(shootEvent, bulletSpawn.position);
+        }
+
         Destroy(bullet, 5f);
     }
 
