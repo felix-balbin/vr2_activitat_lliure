@@ -63,12 +63,6 @@ public class ZombieSpawn : MonoBehaviour
         {
             return;
         }
-        //float distance = Vector3.Distance(spawnPoint.position, Target.position);
-
-        //if (distance < 3f)
-        //{
-        //    return;
-        //}
 
         GameObject zombie = Instantiate(prefabZombie, spawnPoint.position, spawnPoint.rotation);
 
