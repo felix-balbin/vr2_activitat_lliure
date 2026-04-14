@@ -4,7 +4,10 @@ using UnityEngine;
 public class ZombieSpawn : MonoBehaviour
 {
     public GameObject prefabZombie;
-    public Transform[] spawners;
+    private GameManager gameManager;
+    private Transform[] useSpawners;
+    public Transform[] spawnersCafeteria;
+    public Transform[] spawnersAula;
     public int maxZombies = 10;
     public float spawnTime = 3f;
     public Transform Target;
@@ -15,8 +18,9 @@ public class ZombieSpawn : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameManager = GameManager.instancia;
+        updateSpawners();
         StartCoroutine(SpawningLoop());
-        
     }
     IEnumerator SpawningLoop()
     {
@@ -30,7 +34,20 @@ public class ZombieSpawn : MonoBehaviour
             }
         }
     }
+    void updateSpawners()
+    {
+        if (gameManager == null) return;
 
+        if (gameManager.escenaCargada == true)
+        {
+            useSpawners = spawnersAula;
+        }
+        else if (gameManager.siguienteNivel == true)
+        {
+            useSpawners = spawnersCafeteria;
+        }
+
+    }
     void SpawnZombie()
     {
         //detectar mapa
@@ -39,15 +56,15 @@ public class ZombieSpawn : MonoBehaviour
         //si es de aula asignar a useSpawners spawnersAula
         //reeplazar todos los spawners de este codigo con useSpawners
 
-        if (spawners.Length == 0 || prefabZombie == null) return;
+        if (useSpawners.Length == 0 || prefabZombie == null) return;
 
         //int randomIndex = Random.Range(0, spawners.Length);
         Transform spawnPoint = null;
 
-        for (int i = 0; i < spawners.Length; i++)
+        for (int i = 0; i < useSpawners.Length; i++)
         {
-            int randomIndex = Random.Range(0, spawners.Length);
-            Transform posibleSpawn = spawners[randomIndex];
+            int randomIndex = Random.Range(0, useSpawners.Length);
+            Transform posibleSpawn = useSpawners[randomIndex];
 
             float distance = Vector3.Distance(posibleSpawn.position, Target.position);
 
@@ -121,6 +138,6 @@ public class ZombieSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        updateSpawners();
     }
 }

@@ -5,10 +5,10 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instancia;
-
+    public ZombieSpawn zombieSpawn;
     private int armasRecogidas = 0;
-    private bool escenaCargada = false;
-    private bool siguienteNivel = false;
+    public bool escenaCargada = false; //si es true, ha entrado a aula
+    public bool siguienteNivel = false; //si es true, ha entrado a cafeteria
     public GameObject pantallaFinal;
     private bool juegoTerminado = false;
 
