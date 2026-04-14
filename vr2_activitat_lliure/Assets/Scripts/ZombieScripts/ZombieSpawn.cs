@@ -33,6 +33,12 @@ public class ZombieSpawn : MonoBehaviour
 
     void SpawnZombie()
     {
+        //detectar mapa
+        //tener aqui o crear arriba un Transform[] useSpawners
+        //si el mapa es cafeteria, asignarle los spawners de cafeteria
+        //si es de aula asignar a useSpawners spawnersAula
+        //reeplazar todos los spawners de este codigo con useSpawners
+
         if (spawners.Length == 0 || prefabZombie == null) return;
 
         //int randomIndex = Random.Range(0, spawners.Length);
