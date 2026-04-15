@@ -16,10 +16,17 @@ public class ZombieSpawn : MonoBehaviour
 
     public Score score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //void Start()
+    //{
+    //    gameManager = GameManager.instancia;
+    //    UpdateSpawners();
+    //    StartCoroutine(SpawningLoop());
+    //}
+
+    public void StartScript(GameManager gm)
     {
-        gameManager = GameManager.instancia;
-        updateSpawners();
+        gameManager = gm;
+        UpdateSpawners();
         StartCoroutine(SpawningLoop());
     }
     IEnumerator SpawningLoop()
@@ -34,7 +41,7 @@ public class ZombieSpawn : MonoBehaviour
             }
         }
     }
-    void updateSpawners()
+    void UpdateSpawners()
     {
         if (gameManager == null) return;
 
@@ -128,7 +135,7 @@ public class ZombieSpawn : MonoBehaviour
             yield return null;
         }
 
-        //yield return new WaitForSeconds(3f);
+        //yield return new WaitForSeconds(2f);
 
         zombiesAlive--;
         score.AddScore(1);
@@ -138,6 +145,6 @@ public class ZombieSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateSpawners();
+        UpdateSpawners();
     }
 }

@@ -5,12 +5,12 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instancia;
-    public ZombieSpawn zombieSpawn;
     private int armasRecogidas = 0;
     public bool escenaCargada = false; //si es true, ha entrado a aula
     public bool siguienteNivel = false; //si es true, ha entrado a cafeteria
     public GameObject pantallaFinal;
     private bool juegoTerminado = false;
+    private bool spawnActivated = false;
 
     void Awake()
     {
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         if (score >= 30 && !escenaCargada)
         {
             escenaCargada = true;
-            SceneManager.LoadScene("FinalBattle");
+            StartCoroutine(LoadSceneStartSpawner());
         }
         else if (score >= 30 && !siguienteNivel)
         {
@@ -72,6 +72,23 @@ public class GameManager : MonoBehaviour
         {
             juegoTerminado = true;
             StartCoroutine(FinalDelJuego());
+        }
+    }
+    IEnumerator LoadSceneStartSpawner()
+    {
+        SceneManager.LoadScene("FinalBattle");
+        yield return new WaitForSeconds(0.5f);
+        ActivateSpawner();
+    }
+    void ActivateSpawner()
+    {
+        if (spawnActivated) return;
+        spawnActivated = true;
+        ZombieSpawn spawner = FindAnyObjectByType<ZombieSpawn>();
+
+        if (spawner != null)
+        {
+            spawner.StartScript(this);
         }
     }
 
