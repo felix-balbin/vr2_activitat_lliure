@@ -452,7 +452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 0
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &78135156
 BoxCollider:
@@ -715,7 +714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 1
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &124441617
 BoxCollider:
@@ -1565,7 +1563,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 0
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &273761647
 BoxCollider:
@@ -2250,7 +2247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &482973407
 BoxCollider:
@@ -2410,7 +2406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &511941061
 BoxCollider:
@@ -2625,6 +2620,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628383505}
   m_CullTransparentMesh: 1
+--- !u!1001 &639725152
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_Name
+      value: XR Interaction Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.69327
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.37373
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.78988
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
 --- !u!1 &648383643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,7 +2725,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &648383646
 BoxCollider:
@@ -3150,7 +3201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 3
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &789868199
 BoxCollider:
@@ -9222,9 +9272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5841bd80d19d6ea4c869d84a12003a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActivateExintor
-  clip: {fileID: 8300000, guid: 2cc009770301638419debd6662bb13fc, type: 3}
-  source: {fileID: 1052575441}
   particles: {fileID: 968586139}
+  activeFoam: 
 --- !u!1 &1056740034
 GameObject:
   m_ObjectHideFlags: 0
@@ -9390,6 +9439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e36a6c55f0d7fc45ad6340f89ec5524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  escenaCargada: 0
+  siguienteNivel: 0
+  pantallaFinal: {fileID: 0}
 --- !u!4 &1064283406
 Transform:
   m_ObjectHideFlags: 0
@@ -10111,7 +10163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1200079066
 BoxCollider:
@@ -15301,7 +15352,7 @@ MonoBehaviour:
   burstCount: 3
   burstFireRate: 0.08
   shootParticles: {fileID: 1205180757}
-  shootSound: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
+  shootEvent: 
 --- !u!1001 &1245535485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15871,7 +15922,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!1 &1348766613
 GameObject:
@@ -16114,9 +16164,8 @@ MonoBehaviour:
   firePoint: {fileID: 1867091258}
   bulletSpeed: 20
   bulletLifetime: 5
-  clip: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
-  source: {fileID: 1358642290}
   particles: {fileID: 1358642293}
+  shootEvent: 
 --- !u!199 &1358642292
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -21668,7 +21717,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 4
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1611385072
 BoxCollider:
@@ -22033,7 +22081,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 0
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1778554661
 BoxCollider:
@@ -22154,9 +22201,8 @@ MonoBehaviour:
   firePoint: {fileID: 722243540}
   bulletSpeed: 20
   bulletLifetime: 5
-  clip: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
-  source: {fileID: 1791463330}
   particles: {fileID: 1791463332}
+  shootEvent: 
 --- !u!82 &1791463330
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27404,7 +27450,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 2
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1835153667
 BoxCollider:
@@ -32517,7 +32562,7 @@ MonoBehaviour:
   burstCount: 3
   burstFireRate: 0.08
   shootParticles: {fileID: 1879136299}
-  shootSound: {fileID: 8300000, guid: 51901c92923637c4285a56e7cdf3b15b, type: 3}
+  shootEvent: 
 --- !u!1 &1924096193
 GameObject:
   m_ObjectHideFlags: 0
@@ -32633,7 +32678,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1949224150
 BoxCollider:
@@ -32893,7 +32937,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 0
-  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &2005039292
 BoxCollider:
@@ -34012,3 +34055,4 @@ SceneRoots:
   - {fileID: 56773176}
   - {fileID: 318051360}
   - {fileID: 1064283406}
+  - {fileID: 639725152}
