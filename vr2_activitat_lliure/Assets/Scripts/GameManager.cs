@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,11 +50,17 @@ public class GameManager : MonoBehaviour
 
     void TeletransportarJugador()
     {
+        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+        Vector3 Ubi = camera.transform.position;
         GameObject jugador = GameObject.FindGameObjectWithTag("Player");
-
+        GameObject jugador2 = GameObject.FindGameObjectWithTag("Player2");
         if (jugador != null)
         {
-            jugador.transform.position = new Vector3(-13.82f, -0.37f, 15f);
+            jugador.transform.position = (Ubi - new Vector3(0f, 1f, 0f));
+        }
+        if (jugador2 != null)
+        {
+            jugador2.transform.position = new Vector3(1000f, 1000f, 1000f);
         }
     }
 

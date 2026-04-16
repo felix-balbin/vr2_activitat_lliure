@@ -4,16 +4,22 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     private int score = 0;
+    private bool first = true;
     public TextMeshProUGUI textScore;
 
     public void AddScore(int points)
     {
         score += points;
         UpdateScore();
-        GameManager.instancia.CheckScore(score);
         
-        if (score >= 30)
+        if (first && score >= 30)
         {
+            GameManager.instancia.CheckScore(score);
+            ResetScore();
+            first = false;
+        }
+        else if (!first && score >= 30) {
+            GameManager.instancia.CheckScore(score);
             ResetScore();
         }
     }
