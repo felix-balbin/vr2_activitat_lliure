@@ -69,12 +69,26 @@ public class GameManager : MonoBehaviour
         if (score >= 30 && !escenaCargada)
         {
             escenaCargada = true;
+            SceneManager.LoadScene("FinalBattle");
             StartCoroutine(LoadSceneStartSpawner());
         }
         else if (score >= 30 && !siguienteNivel)
         {
             siguienteNivel = true;
+            spawnActivated = false;
+            ClearZombies();
+
             TeletransportarJugador();
+
+            ZombieSpawn spawner = FindAnyObjectByType<ZombieSpawn>();
+
+            if (spawner != null)
+            {
+                spawner.ResetZombieSpawn();
+                StartCoroutine(LoadSceneStartSpawner());
+
+            }
+
         }
         else if (score >= 30 && siguienteNivel && escenaCargada && !juegoTerminado)
         {
@@ -84,8 +98,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator LoadSceneStartSpawner()
     {
-        SceneManager.LoadScene("FinalBattle");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(10f);
         ActivateSpawner();
     }
     void ActivateSpawner()
@@ -97,6 +110,16 @@ public class GameManager : MonoBehaviour
         if (spawner != null)
         {
             spawner.StartScript(this);
+        }
+    }
+
+    public void ClearZombies()
+    {
+        ZombieStateManager[] zombies = FindObjectsByType<ZombieStateManager>(FindObjectsSortMode.None);
+
+        foreach (var zombie in zombies)
+        {
+            zombie.DespawnZombie();
         }
     }
 

@@ -45,13 +45,13 @@ public class ZombieSpawn : MonoBehaviour
     {
         if (gameManager == null) return;
 
-        if (gameManager.escenaCargada == true)
-        {
-            useSpawners = spawnersAula;
-        }
-        else if (gameManager.siguienteNivel == true)
+        if (gameManager.siguienteNivel == true)
         {
             useSpawners = spawnersCafeteria;
+        }
+        else if (gameManager.escenaCargada == true)
+        {
+            useSpawners = spawnersAula;
         }
 
     }
@@ -63,7 +63,7 @@ public class ZombieSpawn : MonoBehaviour
         //si es de aula asignar a useSpawners spawnersAula
         //reeplazar todos los spawners de este codigo con useSpawners
 
-        if (useSpawners.Length == 0 || prefabZombie == null) return;
+        if (useSpawners == null || useSpawners.Length == 0 || prefabZombie == null) return;
 
         //int randomIndex = Random.Range(0, spawners.Length);
         Transform spawnPoint = null;
@@ -136,11 +136,19 @@ public class ZombieSpawn : MonoBehaviour
         }
 
         //yield return new WaitForSeconds(2f);
-
         zombiesAlive--;
         score.AddScore(1);
         Debug.Log(score);
     }
+
+    public void ResetZombieSpawn()
+    {
+        StopAllCoroutines();
+        zombiesAlive = 0;
+        spawnActive = true;
+        StartCoroutine(SpawningLoop());
+    }
+
 
     // Update is called once per frame
     void Update()
