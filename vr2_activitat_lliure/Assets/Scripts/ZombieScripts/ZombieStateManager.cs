@@ -136,6 +136,13 @@ public class ZombieStateManager : MonoBehaviour
         }
 
     }
+
+    public void DespawnZombie()
+    {
+        isDeath = true;
+        Destroy(gameObject);
+
+    }
     void OnDestroy()
     {
         zombieInstance.release();

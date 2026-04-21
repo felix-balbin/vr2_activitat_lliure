@@ -20,7 +20,7 @@ public class ZombieAIContext : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         Animator = GetComponent<Animator>();
 
-        randomDancer = Random.Range(0,2);
+        randomDancer = Random.Range(0,3);
         //prueba :
 
         // Forzar: que el Animator no aplique root motion

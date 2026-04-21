@@ -2142,6 +2142,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5773048175380119053, guid: 3d65cd29abc48274ebb47c5fb2623642, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1164550603}
+    - targetCorrespondingSourceObject: {fileID: 5773048175380119053, guid: 3d65cd29abc48274ebb47c5fb2623642, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 483360627}
     - targetCorrespondingSourceObject: {fileID: 7209065196380900227, guid: 3d65cd29abc48274ebb47c5fb2623642, type: 3}
       insertIndex: -1
       addedObject: {fileID: 557947927}
@@ -3290,7 +3293,7 @@ Transform:
   m_GameObject: {fileID: 382593007}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.184, y: 0, z: -0.604}
+  m_LocalPosition: {x: -1.936, y: 0, z: -0.604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3823,7 +3826,7 @@ Transform:
   m_GameObject: {fileID: 422484471}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.2, y: 0, z: 1.248}
+  m_LocalPosition: {x: -0.2, y: 0, z: -0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4041,12 +4044,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483360626}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.16877, y: -0.39461, z: 13.12895}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4587698, y: -0.77461, z: -3.57168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1096976131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &483360628
 MonoBehaviour:
@@ -9009,7 +9012,7 @@ GameObject:
   - component: {fileID: 1506724709}
   m_Layer: 0
   m_Name: ZombieSpawn
-  m_TagString: Untagged
+  m_TagString: ZombieSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13709,7 +13712,7 @@ Transform:
   m_GameObject: {fileID: 2041410355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -2.15, y: 0, z: 3.519}
+  m_LocalPosition: {x: -5.15, y: 0, z: -2.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14753,7 +14756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9be5ea26ae201c4e861236d75a1768e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49899864
+      value: 1.026
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9be5ea26ae201c4e861236d75a1768e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -35651,7 +35654,6 @@ SceneRoots:
   - {fileID: 1557400622}
   - {fileID: 1513311793}
   - {fileID: 1042911574}
-  - {fileID: 483360627}
   - {fileID: 1511575944}
   - {fileID: 768440895}
   - {fileID: 1506724710}

@@ -37,7 +37,8 @@ public class ZombieWalkState : ZombieBaseState
             ctx.Agent.destination = targetPos;
         }
 
-        //Si la distancia entre el boss y el target es menor a la distancia para activar el charge, activa el telégrafo
+        //Si la distancia entre el boss y el target es menor a la distancia para activar el charge,
+        //activa el telégrafo
         if (dist <= ctx.ChargeRange + 0.2f)
         {
             zombie.ChangeState(chargeState);
