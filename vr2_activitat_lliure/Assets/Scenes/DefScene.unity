@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 0
+  score: {fileID: 0}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &78135156
 BoxCollider:
@@ -714,6 +715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 1
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &124441617
 BoxCollider:
@@ -1563,6 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 0
+  score: {fileID: 0}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &273761647
 BoxCollider:
@@ -2247,6 +2250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &482973407
 BoxCollider:
@@ -2406,6 +2410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &511941061
 BoxCollider:
@@ -2725,6 +2730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &648383646
 BoxCollider:
@@ -3201,6 +3207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 3
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &789868199
 BoxCollider:
@@ -10163,6 +10170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1200079066
 BoxCollider:
@@ -15922,6 +15930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!1 &1348766613
 GameObject:
@@ -21717,6 +21726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 4
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1611385072
 BoxCollider:
@@ -22081,6 +22091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 0
+  score: {fileID: 0}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1778554661
 BoxCollider:
@@ -27450,6 +27461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 2
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1835153667
 BoxCollider:
@@ -32678,6 +32690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 8
+  score: {fileID: 56773175}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &1949224150
 BoxCollider:
@@ -32937,6 +32950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   points: 0
+  score: {fileID: 0}
   bulletHole: {fileID: 2400408948505046718, guid: 154ba81debda6a74681bc9c8c3070045, type: 3}
 --- !u!65 &2005039292
 BoxCollider:
