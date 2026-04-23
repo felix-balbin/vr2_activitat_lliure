@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEngine.XR.Interaction.Toolkit.Locomotion;
-using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class GameManager : MonoBehaviour
     private int armasRecogidas = 0;
     public bool escenaCargada = false; //si es true, ha entrado a aula
     public bool siguienteNivel = false; //si es true, ha entrado a cafeteria
-    public GameObject pantallaFinal;
+    public TextMeshPro pantallaFinal;
     private bool juegoTerminado = false;
     private bool spawnActivated = false;
 
@@ -31,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         if (pantallaFinal != null)
         {
-            pantallaFinal.SetActive(false);
+            pantallaFinal.text = "";
         }
     }
 
@@ -127,7 +126,7 @@ public class GameManager : MonoBehaviour
     {
         if (pantallaFinal != null)
         {
-            pantallaFinal.SetActive(true);
+            pantallaFinal.text = "GANASTE"; ;
         }
         yield return new WaitForSeconds(3f);
         #if UNITY_EDITOR
