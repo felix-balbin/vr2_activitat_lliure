@@ -379,10 +379,10 @@ MonoBehaviour:
   Path: projecte_fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639125678515694246
+  lastModified: 639125607559737727
   FileSizes:
   - Name: Desktop
-    Value: 1216
+    Value: 1160
   Exists: 1
 --- !u!114 &-2398195061230469593
 MonoBehaviour:
@@ -628,10 +628,10 @@ MonoBehaviour:
   Path: projecte_fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639125678515684214
+  lastModified: 639125607559717451
   FileSizes:
   - Name: Desktop
-    Value: 2545152
+    Value: 513760
   Exists: 1
 --- !u!114 &-235929046706708934
 MonoBehaviour:
@@ -685,14 +685,13 @@ MonoBehaviour:
   - {fileID: 1006666557245754284}
   - {fileID: -4366876414552711245}
   - {fileID: -1026373879739959482}
-  - {fileID: 3701057458409725943}
   EditorParameters: []
   MasterBanks:
   - {fileID: -549092434554831231}
   StringsBanks:
   - {fileID: -3459356241076734104}
   cacheVersion: 131858
-  cacheTime: 639125678515694246
+  cacheTime: 639125607559737727
   SerializableEventsDict:
   - key: event:/zombies_walking_background
     index: 0
@@ -712,8 +711,6 @@ MonoBehaviour:
     index: 7
   - key: event:/zombie_talk_1
     index: 8
-  - key: event:/background_music_gameplay
-    index: 9
 --- !u!114 &235024182396441967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,33 +1028,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1724
---- !u!114 &3701057458409725943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/background_music_gameplay
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/background_music_gameplay
-  Guid:
-    Data1: -750721619
-    Data2: 1237763662
-    Data3: 1709697458
-    Data4: 28445416
-  Banks:
-  - {fileID: -549092434554831231}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 166739
 --- !u!114 &4454783069266660388
 MonoBehaviour:
   m_ObjectHideFlags: 0
